@@ -1,0 +1,7 @@
+<p>Hello <%= @email %>!</p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>Ezt a levelet azért kapod, mert az emailcímed épp megváltozik a következőre: <%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p>Ezt a levelet azért kapod, mert az emailcímed megváltozott a következőre: <%= @resource.email %>.</p>
+<% end %>

@@ -1,0 +1,75 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
+
+      <h2 class="title is-2">Felhasználó szerkesztése</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+
+          <div class="field">
+            <div class="control">
+              <%= f.input :name, label:'Felhasználónév', required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <%= f.input :email, label:'Email cím', required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <%= f.input :city, label:'Város', required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <%= f.input :postcode, label:'Irányítószám', required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <%= f.input :address, label:'Lakcím', required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+          </div>
+
+          <div class="field">
+            <div class="control">
+            <%= f.input :password, label:'Jelszó', autocomplete: "off", hint: "hagyd üresen, ha nem akarod megváltoztatni", required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+            <%= f.input :password_confirmation, label:'Jelszó megerősítése', required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <%= f.input :current_password, label:'Jelenlegi jelszó', hint: "szükséges a régi jelszód a változtatás érvényesítéséhez", required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+        </div>
+
+        <%= f.button :submit, "Frissítés", class:"btn btn-primary" %>
+
+      <% end %>
+
+        <hr />
+        <h3 class="title is-5">Fiók törlése</h3>
+        <p>Nem boldog? <%= link_to "Fiók törlése", registration_path(resource_name), data: { confirm: "Biztos törölni akarja fiókját?" }, method: :delete, class: "btn btn-danger" %></p>
+
+      </div>
+    </div>
+  </div>
+</section>

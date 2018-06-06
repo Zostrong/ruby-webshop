@@ -1,0 +1,14 @@
+
+<div class="row">
+<% @products.each do |product| %>
+<div class="card" style="width:350px; margin: 10px">
+  <img class="card-img-top" src="<%= product.image %>" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title"><%= product.model %></h4>
+    <h5 class="card-title"><%= number_to_currency(product.price, unit: "Ft", precision: 0, format: "%n %u") %></h5>
+    <p class="card-text"><%= product.category %></p>
+    <a href="<%= product_path(product) %>" class="btn btn-primary">További részletek</a>
+  </div>
+</div>
+<% end %>
+</div>

@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-sm-12 col-md-10 col-md-offset-1">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Termék</th>
+        <th>Mennyiség</th>
+        <th class="text-center">Ár</th>
+        <th class="text-center">Összesen</th>
+        <th> </th>
+      </tr>
+      </thead>
+      <tbody>
+      <%= render(@cart.line_items) %>
+      <tr>
+        <td>   </td>
+        <td>   </td>
+        <td>   </td>
+        <td><h3>Total</h3></td>
+        <td class="text-right"><h3><strong><%= number_to_currency(@cart.total_price, unit: "Ft", precision: 0, format: "%n %u") %></strong></h3></td>
+      </tr>
+      <tr id="cart-button-container">
+        <td>
+          <%= button_to 'Kosár ürítése', @cart, method: :delete, data: { confirm: "Biztos törölni akarja a kosár tartalmát?" }, class:'btn btn-danger' %>
+        </td>
+        <td>   </td>
+        <td>   </td>
+        <td>
+          <button type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-shopping-cart"></span><a href="/">Vásárlás folytatása</a>
+          </button></td>
+        <td>
+            <button type="button" class="btn btn-success" <%= user_signed_in? ? "" : "disabled" %>>
+              Fizetés <span class="glyphicon glyphicon-play"></span>
+            </button>
+
+        </td>
+
+      </tr>
+
+          <% unless user_signed_in? %>
+            <tr id="login-shopping">
+              <td>
+                <div>Vásárláshoz <a href="<%= new_user_session_path %>"> jelentkezz be </a></div>
+              </td>
+              <td>   </td>
+              <td>   </td>
+              <td>   </td>
+              <td>   </td>
+          <% end %>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
