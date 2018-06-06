@@ -42,8 +42,18 @@
   display: inline-block;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
 #counter {
   padding: 0;
+  background: #45b12b;
+  border-color: #45b12b;
 }
 
 #cart-button-container:hover,
@@ -56,6 +66,94 @@
 }
 
 .btn a {
-  text-decoration: none;
-  color: #fff
+   text-decoration: none;
+   color: #fff
+ }
+
+.btn,
+.btn-primary {
+  border-color: #4ea721;
+  background: #4ea721;
+}
+
+.btn:hover {
+  border-color: #5fc128;
+  background: #5fc128;
+}
+
+.btn:active,
+.btn-primary:active {
+  border-color: #5fc128 !important;
+  background: #5fc128 !important;
+}
+
+.bg-primary {
+  background: #948f6d !important;
+}
+
+body {
+  background: url("/uploads/38035261-grass-pictures.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.row,
+section,
+.section {
+  background: rgba(0,0,0,0.4);
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+.details {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0,0,0,0.6);
+  border-radius: 20px;
+}
+
+.card {
+  color: rgba(0,0,0,0.8);
+}
+
+table {
+  background: rgba(0,0,0,0.6);
+}
+
+a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.dropdown-item:hover,
+.dropdown-item:active {
+  background: #4ea721;
+}
+
+.btn-danger,
+.btn-danger:active {
+  background: #a30100 !important;
+  border-color: #a30100 !important;
+}
+
+.btn-success,
+.btn-success:active {
+  background: #b7b822 !important;
+  border-color: #b7b822 !important;
 }
