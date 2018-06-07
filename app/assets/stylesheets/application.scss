@@ -101,9 +101,7 @@ body {
 section,
 .section {
   background: rgba(0,0,0,0.4);
-  padding-left: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 10px 20px 10px;
   border-radius: 10px;
 }
 
@@ -137,6 +135,10 @@ a {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.form-text {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 a:hover {
   color: rgba(255, 255, 255, 1);
 }
@@ -156,4 +158,12 @@ a:hover {
 .btn-success:active {
   background: #b7b822 !important;
   border-color: #b7b822 !important;
+}
+
+input[type="submit"]:active {
+  background: #4ea721;
+}
+
+.check-price {
+  white-space: nowrap;
 }

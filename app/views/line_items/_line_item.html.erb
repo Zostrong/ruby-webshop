@@ -8,8 +8,8 @@
       </div>
     </div></td>
   <td class="col-sm-1 col-md-1 text-center"><strong><%= line_item.quantity %></strong></td>
-  <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency(line_item.product.price, unit: "Ft", precision: 0, format: "%n %u") %></strong></td>
-  <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency(line_item.total_price, unit: "Ft", precision: 0, format: "%n %u") %></strong></td>
+  <td class="col-sm-1 col-md-1 text-center check-price"><strong><%= number_to_currency(line_item.product.price, unit: "Ft", precision: 0, format: "%n %u") %></strong></td>
+  <td class="col-sm-1 col-md-1 text-center check-price"><strong><%= number_to_currency(line_item.total_price, unit: "Ft", precision: 0, format: "%n %u") %></strong></td>
   <td class="col-sm-1 col-md-1">
     <div>
       <span class="glyphicon glyphicon-remove"></span>

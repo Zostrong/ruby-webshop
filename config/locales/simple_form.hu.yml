@@ -10,7 +10,41 @@ hu:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Kérjük javítsa ki a következő hibákat:"
-
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "nem lehet üres"
+            password:
+              blank: 'nem lehet üres'
+            name:
+              blank: "nem lehet üres"
+            city:
+              blank: "nem lehet üres"
+            postcode:
+              blank: "nem lehet üres"
+              not_an_integer: "Számank kell lennie"
+            address:
+              blank: "nem lehet üres"
+        product:
+            attributes:
+              brand:
+                blank: "nem lehet üres"
+              model:
+                blank: "nem lehet üres"
+              price:
+                blank: "nem lehet üres"
+                not_an_integer: "Számank kell lennie"
+              category:
+                blank: "nem lehet üres"
+      hints:
+        user:
+          password: 'Minimum 6 karakter'
+      labels:
+        user:
+          password: 'Minimum 6 karakter'
     # Examples
     # labels:
     #   defaults:
