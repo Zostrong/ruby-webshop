@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
+
   setup do
     @product = products(:one)
   end
@@ -12,15 +13,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
     get new_product_url
-    assert_response :success
+    assert_redirected_to new_user_session_path
   end
 
-  test "should create product" do
-    assert_difference('Product.count') do
+  test "not authenticated should not create product" do
+    assert_no_changes('Product.count') do
       post products_url, params: { product: { brand: @product.brand, description: @product.description, model: @product.model, price: @product.price } }
     end
-
-    assert_redirected_to product_url(Product.last)
   end
 
   test "should show product" do
@@ -28,21 +27,19 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "not authenticated should not get edit" do
     get edit_product_url(@product)
-    assert_response :success
+    assert_redirected_to new_user_session_path
   end
 
-  test "should update product" do
+  test "not authenticated should not update product" do
     patch product_url(@product), params: { product: { brand: @product.brand, description: @product.description, model: @product.model, price: @product.price } }
-    assert_redirected_to product_url(@product)
+    assert_redirected_to new_user_session_path
   end
 
-  test "should destroy product" do
-    assert_difference('Product.count', -1) do
+  test "not autheticated should not destroy product" do
+    assert_no_changes('Product.count', 0) do
       delete product_url(@product)
     end
-
-    assert_redirected_to products_url
   end
 end

@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  brand: MyString
+  id: 1
+  brand: HUSQVARNA
   model: MyString
   description: MyText
+  category: fűnyíró
   price: 1
 
 two:
-  brand: MyString
+  id: 2
+  brand: HUSQVARNA
   model: MyString
   description: MyText
+  category: fűnyíró
   price: 1
